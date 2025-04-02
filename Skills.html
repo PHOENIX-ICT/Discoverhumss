@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <style>
+        body {
+            background-image: url("https://media.gettyimages.com/id/1356443550/video/abstract-glitter-background-bokeh-shallow-depth-of-field-selective-focus-green-version.jpg?s=640x640&k=20&c=urYXnur50snEI7ow5P16924Qa7T1RTYm2gKao5V9664=");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        nav {
+            background-color: rgba(3, 172, 19, 0.9);
+            width: 98.3%;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .left-section img {
+            height: 60px;
+            width: 80px;
+            margin-right: 20px;
+        }
+
+        .school-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: white;
+        }
+
+        .school-info h3 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li button {
+            background-color: rgba(3, 172, 19, 0.9);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li button:hover {
+            background-color: #043927;
+            transform: scale(1.1);
+        }
+
+        nav ul li .dropdown {
+            display: none;
+            position: absolute;
+            background-color: rgba(3, 172, 19, 0.9);
+            min-width: 160px;
+            border: 2px solid black;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+
+        nav ul li .dropdown button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+            border: none;
+            border-radius: 0;
+            background: transparent;
+        }
+
+        nav ul li .dropdown button:hover {
+            background-color: #043927;
+        }
+
+        .header-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            width: 95%;
+            border: 5px solid black;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            padding: 20px;
+            width: 95%;
+            border: 5px solid black;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .content-box img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .content-box div {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-top: 0;
+        }
+        
+        .upperheader-box {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            width: 95%; 
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+		
+		.image-1 {
+		    position: absolute;
+            top:4px;
+            left: 10px;
+            height: 60px;
+            width: 80px;
+		}
+		
+		h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+		
+		h3 {
+            font-size: 16px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 
+                         0 0 30px rgba(255, 255, 255, 0.6), 
+                         0 0 45px rgba(255, 255, 255, 0.4);
+        }
+
+        p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+		
+		h2 {
+		    font-size: 30px;
+		}
+		
+		.footer-box p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        body > * {
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .footer-container {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            width: 94.3%;
+            border: 5px solid black;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-top: auto;
+        }
+
+        .btn-section ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-section ul li {
+            display: inline;
+        }
+
+        .btn-section a {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            padding: 10px 15px;
+            border: 2px solid black;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-section a:hover {
+            background-color: #043927;
+            color: white;
+            transform: scale(1.1);
+        }
+				
+        .scroll-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .scroll-buttons button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: rgba(3, 172, 19, 0.9);
+            color: black;
+            border-radius: 5px;
+        }
+        .scroll-buttons button:hover {
+            background-color: #043927;
+        }
+
+    </style>
+</head>
+<script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+    </script>
+	<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll(".btn-section a");
+
+        links.forEach(link => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                const targetId = this.getAttribute("href").substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: "smooth" });
+                }
+            });
+        });
+    });
+    </script>
+<body>
+<div class="scroll-buttons">
+        <button onclick="scrollToTop()">Go to Top</button>
+        <button onclick="scrollToBottom()">Go to Bottom</button>
+    </div>
+
+<nav>
+    <div class="left-section">
+        <img src="https://scontent.fcrk3-2.fna.fbcdn.net/v/t1.15752-9/483310639_655257787453023_541586666203192303_n.png?stp=dst-png_p480x480&_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeEP8DKZgwbGDJulvrUadjN2g77IqgzndL6DvsiqDOd0vvu24Fr0mTPqoJtXHvMISIRhN19EjU7Es7zDXo1ybUu5&_nc_ohc=RF7yax_EitoQ7kNvgE6DjeR&_nc_oc=Adk6MmYNgSaureOoJGTYeInWb6PyJsaAVy4E1NS397ehpTmoCctZ0m_47b5mrA9B13k&_nc_ad=z-m&_nc_cid=1119&_nc_zt=23&_nc_ht=scontent.fcrk3-2.fna&oh=03_Q7cD1wEM35BQxgkxHIuhdYzOwtZ6M8SfL_InXdi6BFC0jI-yBg&oe=6802CBE0" alt="logo">
+        <div class="school-info">
+            <h3>Virginia Ramirez-Cruz National High School</h3>
+            <h3>Siling Bata, Pandi, Bulacan</h3>
+        </div>
+    </div>
+    <ul>
+        <li><button onclick="window.open('Next.html')">Home</button></li>
+        <li>
+            <button>Grade Level</button>
+            <ul class="dropdown">
+                <li><button onclick="window.open('G11.html')">Grade 11</button></li>
+                <li><button onclick="window.open('G12.html')">Grade 12</button></li>
+            </ul>
+        </li>
+        <li><button onclick="window.open('Course.html')">Course Options</button></li>
+		<li><button onclick="window.open('Skills.html')">Skills</button></li>
+        <li><button onclick="window.open('AboutUs.html')">About Us</button></li>
+    </ul>
+</nav>
+	
+	<div class="upperheader-box">
+	</div>
+	
+	<div class="header-box">
+        <h1>Skills</h1>
+	</div>
+	
+	<div class="upperheader-box">
+	</div> 
+	
+	<div class="content-box" id="ba-communication">
+		<div>
+		    <h2>Communication Skills</h2>
+			<p>To enhance the communication skills of HUMSS students, focus on the following subjects:</p>
+			<li>Oral Communication (effective speech and public speaking)</li><br>
+			<li>EAPP (academic writing)</li><br>
+			<li>Reading and Writing (comprehension and composition)</li><br>
+			<li>Komunikasyon (Filipino language proficiency)</li><br>
+			<li>Nonfiction (expressive writing)</li><br>
+		</div>
+	</div>
+	
+	<div class="content-box" id="ba-communication">
+		<div>
+		    <h2>Critical Thinking</h2>
+			<p>To develop critical thinking skills, HUMSS students should engage in the following subjects:</p>
+			<li>DISS (understanding societal structures)</li><br>
+			<li>21st Century Literature (literary analysis)</li><br>
+			<li>Statistics and Probability (logical reasoning, data interpretation)</li><br>
+			<li>Trends, Networks, and Critical Thinking (global patterns)</li><br>
+			<li>Philosophy (logical reasoning, argumentation)</li><br>
+			<li>3 I’s (innovation & interaction)</li><br>
+			<li>UCSP (culture & society)</li><br>
+		</div>
+	</div>
+	
+	<div class="content-box" id="ba-communication">
+		<div>
+		    <h2>Research Skills</h2>
+			<p>To strengthen research skills, students must study the following subjects:</p>
+			<li>Practical Research 1 & 2 (qualitative & quantitative research)</li><br>
+			<li>Physical Science (scientific inquiry)</li><br>
+			<li>Entrepreneurship (business strategies)</li><br>
+		</div>
+	</div>
+	
+	<div class="content-box" id="ba-communication">
+		<div>
+		    <h2>Creativity</h2>
+			<p>To enhance creativity, HUMSS students should explore the following subjects:</p>
+			<li>21st Century Literature (modern literary forms)</li><br>
+			<li>EAPP (technical & creative writing)</li><br>
+            <li>Earth and Life Science (nature & human interaction)</li><br>
+			<li>CPAR (Philippine arts)</li><br>
+			<li>Creative Nonfiction (literary storytelling)</li><br>
+		</div>
+	</div>
+	
+	<div class="content-box" id="ba-communication">
+		<div>
+		    <h2>Social Awareness</h2>
+			<p>To improve social awareness, HUMSS students should focus on these subjects:</p>
+			<li>DISS (society & its functions)</li><br>
+			<li>Philippine Politics and Governance (PPG) (government & policies)</li><br>
+			<li>Pagbasa (critical reading)</li><br>
+			<li>Introduction to World Religions and Belief Systems (cultural & religious understanding)</li><br>
+			<li>Community Engagement, Solidarity, and Citizenship (civic responsibility)</li><br>
+		</div>
+	</div>
+	
+	<div class="content-box" id="ba-communication">
+		<div>
+		    <h2>Leadership</h2>
+			<p>To cultivate leadership skills, HUMSS students should participate in the following subjects:</p>
+			<li>PEH 1, 2, 3 & 4 (teamwork & discipline)</li><br>
+			<li>Personal Development (self-awareness, goal-setting)</li><br>
+			<li>Culminating Activity (applying acquired skills)</li><br>
+		</div>
+	</div>
+	
+	<div class="content-box" id="ba-communication">
+		<div>
+		    <h2>Persuasion & Argumentation</h2>
+			<p>To master persuasion and argumentation, HUMSS students should take these subjects:</p>
+			<li>Oral Communication (public speaking)</li><br>
+			<li>EAPP (argumentative writing)</li><br>
+			<li>Reading and Writing (forming strong arguments)</li><br>
+			<li>Philosophy (logical argumentation)</li><br>
+			<li>Trends, Networks, and Critical Thinking (debate, discussion)</li><br>
+		</div>
+	</div>
+	
+	<div class="content-box" id="ba-communication">
+		<div>
+		    <h2>Media & Information Literacy</h2>
+			<p>To develop media and information literacy, HUMSS students should study these subjects:</p>
+			<li>General Mathematics (data-based reasoning)</li><br>
+			<li>Statistics and Probability (fact analysis)</li><br>
+			<li>Empowerment Technologies (EmpTech) (digital literacy)</li><br>
+			<li>Media and Information Literacy (MIL) (critical media consumption)</li><br>
+		</div>
+	</div>
+	
+	<div class="content-box" id="ba-communication">
+		<div>
+		    <h2>Time Management</h2>
+			<p>To improve time management, HUMSS students should practice self-discipline through these subjects:</p>
+			<li>Culminating Activity (project-based learning)</li><br>
+			<li>Entrepreneurship (business execution)</li><br>
+		</div>
+	</div>
+	
+	<div class="content-box" id="ba-communication">
+		<div>
+		    <h2>Writing Skills</h2>
+			<p>To refine writing skills, HUMSS students should focus on these subjects:</p>
+			<li>Creative Nonfiction (literary writing)</li><br>
+			<li>MIL (journalistic & technical writing)</li><br>
+		</div>
+	</div>

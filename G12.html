@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade12 Page</title>
+    <style>
+        body {
+            background-image: url("https://media.gettyimages.com/id/1356443550/video/abstract-glitter-background-bokeh-shallow-depth-of-field-selective-focus-green-version.jpg?s=640x640&k=20&c=urYXnur50snEI7ow5P16924Qa7T1RTYm2gKao5V9664=");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        nav {
+            background-color: rgba(3, 172, 19, 0.9);
+            width: 98.3%;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .left-section img {
+            height: 60px;
+            width: 80px;
+            margin-right: 20px;
+        }
+
+        .school-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: white;
+        }
+
+        .school-info h3 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li button {
+            background-color: rgba(3, 172, 19, 0.9);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li button:hover {
+            background-color: #043927;
+            transform: scale(1.1);
+        }
+
+        nav ul li .dropdown {
+            display: none;
+            position: absolute;
+            background-color: rgba(3, 172, 19, 0.9);
+            min-width: 160px;
+            border: 2px solid black;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+
+        nav ul li .dropdown button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 10px;
+            border: none;
+            border-radius: 0;
+            background: transparent;
+        }
+
+        nav ul li .dropdown button:hover {
+            background-color: #043927;
+        }
+
+        .header-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            width: 95%;
+            border: 5px solid black;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            padding: 20px;
+            width: 95%;
+            border: 5px solid black;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+        }
+
+        .content-box img {
+            max-width: 200px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .footer-box {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            width: 94.3%;
+            border: 5px solid black;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-top: auto;
+        }
+		
+		.upperheader-box {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            width: 95%; 
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+		
+		.image-1 {
+		    position: absolute;
+            top:4px;
+            left: 10px;
+            height: 60px;
+            width: 80px;
+		}
+		
+		h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+		
+		h3 {
+            font-size: 16px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 
+                         0 0 30px rgba(255, 255, 255, 0.6), 
+                         0 0 45px rgba(255, 255, 255, 0.4);
+        }
+
+        p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+		
+		h2 {
+		    font-size: 30px;
+		}
+		
+		.footer-box p {
+            font-size: 14px;
+            margin: 0;
+        }
+		
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        body > * {
+            animation: fadeIn 1.5s ease-out;
+        }
+		
+		.scroll-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .scroll-buttons button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: rgba(3, 172, 19, 0.9);
+            color: black;
+            border-radius: 5px;
+        }
+        .scroll-buttons button:hover {
+            background-color: #043927;
+        }
+	</style>
+</head>
+<script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+    </script>
+<body>
+<div class="scroll-buttons">
+        <button onclick="scrollToTop()">Go to Top</button>
+        <button onclick="scrollToBottom()">Go to Bottom</button>
+    </div>
+
+<nav>
+    <div class="left-section">
+        <img src="https://scontent.fcrk3-2.fna.fbcdn.net/v/t1.15752-9/483310639_655257787453023_541586666203192303_n.png?stp=dst-png_p480x480&_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeEP8DKZgwbGDJulvrUadjN2g77IqgzndL6DvsiqDOd0vvu24Fr0mTPqoJtXHvMISIRhN19EjU7Es7zDXo1ybUu5&_nc_ohc=RF7yax_EitoQ7kNvgE6DjeR&_nc_oc=Adk6MmYNgSaureOoJGTYeInWb6PyJsaAVy4E1NS397ehpTmoCctZ0m_47b5mrA9B13k&_nc_ad=z-m&_nc_cid=1119&_nc_zt=23&_nc_ht=scontent.fcrk3-2.fna&oh=03_Q7cD1wEM35BQxgkxHIuhdYzOwtZ6M8SfL_InXdi6BFC0jI-yBg&oe=6802CBE0" alt="logo">
+        <div class="school-info">
+            <h3>Virginia Ramirez-Cruz National High School</h3>
+            <h3>Siling Bata, Pandi, Bulacan</h3>
+        </div>
+    </div>
+    <ul>
+        <li><button onclick="window.open('Next.html')">Home</button></li>
+        <li>
+            <button>Grade Level</button>
+            <ul class="dropdown">
+                <li><button onclick="window.open('G11.html')">Grade 11</button></li>
+                <li><button onclick="window.open('G12.html')">Grade 12</button></li>
+            </ul>
+        </li>
+        <li><button onclick="window.open('Course.html')">Course Options</button></li>
+		<li><button onclick="window.open('Skills.html')">Skills</button></li>
+        <li><button onclick="window.open('AboutUs.html')">About Us</button></li>
+    </ul>
+</nav>
+	
+<div class="header-box">
+        <h1>Grade 12 HUMSS Subjects</h1>
+    </div>
+	
+	<div class="upperheader-box">
+	</div>
+	
+	<div class="header-box">
+        <h1>1st Semester</h1>
+	</div>
+	
+	<div class="header-box">
+        <h1>Specialization</h1>
+	</div>
+	
+	<div class="content-box">
+		<img src="https://www.inc91.com/uploads/images/202110/image_750x_61641f2d3a4c5.jpg">
+		<div>
+            <h2>Entrepreneurship</h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎ Entrepreneurship is the process of discovering new ways of combining resources. When the market value generated by this new combination of resources is greater than the market value these resources can generate elsewhere individually or in some other combination, the entrepreneur makes a profit.</p>
+        </div>
+	</div>
+	
+	<div class="content-box">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoUOAuHikZ9yRBtEHhVT_7YIpHSk6VXG6Atg&s">
+		<div>
+            <h2>Practical Research 2</h2>
+		    <p>‎ ‎ ‎ ‎ ‎ ‎ ‎  The course aims to develop critical thinking and problem-solving skills of Grade 12 students through the conduct quantitative research relative to their interests and senior high school track and strand.</p>
+        </div>
+	</div>
+	
+	<div class="content-box">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfl0GOzBxtqTBZSc2Nf1ScZ5A0Wpe1TNRidw&s">
+		<div>
+            <h2>Introduction to World Religions and Belief System</h2>
+		    <p>‎ ‎ ‎ ‎ ‎ ‎ ‎  It aims to help learners understand the historical contexts of nine religions, appreciate their uniqueness and similarities and promote mutual understanding among believers of different faiths. They are expected to demonstrate understanding and appreciation of one's faith and that of others.</p>
+        </div>
+	</div>
+	
+	<div class="content-box">
+		<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXqa8_KUE2pBX61qyJwv1_mub4ik5I3zojRQXH2fzL8pEaZHVvw1lvG9kBwhgIL4tVsDCVUMlI5-2EpSJDxmphxuTDjqwG2ROcIoluxrrfoHxI7q52F8aLy-sEFxStGACdfe777IQ9cHhT/w1200-h630-p-k-no-nu/ppg+cover+photo.png">
+		<div>
+            <h2>Philippine Politics and Governance (PPG)</h2>
+		    <p>‎ ‎ ‎ ‎ ‎ ‎ ‎  Politics in the Philippines are governed by a three-branch system of government. The country is a democracy, with a president who is directly elected by the people and serves as both the head of state and the head of government.</p>
+        </div>
+	</div>
+	
+	<div class="content-box">
+		<img src="https://previews.123rf.com/images/radiantskies/radiantskies1211/radiantskies121103765/16602925-Abstract-word-cloud-for-Creative-nonfiction-with-related-tags-and-terms-Stock-Photo.jpg">
+		<div>
+            <h2>Creative Nonfiction (CNF)</h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎  The Creative Nonfiction (CNF) genre can be rather elusive. It is focused on story, meaning it has a narrative plot with an inciting moment, rising action, climax and denoument, just like fiction. However, nonfiction only works if the story is based in truth, an accurate retelling of the author's life experiences.</p>
+        </div>
+	</div>
+	
+	<div class="header-box">
+        <h1>Core Subjects</h1>
+	</div>
+	
+	<div class="content-box">
+	    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1H2lBrKEnWi770B7V_ElpBqQK7_AaGqnI1w&s">
+		<div>
+		    <h2> Physical Education and Health </h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎  Physical Education and Health offers experiential learning for learners to adopt an active life for fitness and lifelong health. </p>
+		</div>
+	</div>
+	
+	<div class="content-box">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtYT5_OpCHjTSZf_4aq34YX45QUQyaUstEUA&s">
+		<div>
+            <h2>Contemporary Philippine Arts from the Regions</h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎  The Philippine Contemporary Art can be classified into seven major art forms. These are painting, sculpture, architecture, film, literature, music, theatre and dance.</p>
+        </div>
+	</div>
+	
+	
+	<div class="content-box">
+		<img src="data:image/jpeg;base64,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">
+		<div>
+            <h2>Introduction to the Philosophy of the Human Person</h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎  The introduction to philosophy of human person is a core subject of senior high school. This is an initiation to the activity and process of philosophical reflection as a search for a synoptic vision of life.</p>
+        </div>
+	</div>
+	
+	<div class="content-box">
+		<img src="https://cdn.slidesharecdn.com/ss_thumbnails/ucsp-u1-l1-240108230958-45df9731-thumbnail.jpg?width=640&height=640&fit=bounds">
+		<div>
+            <h2>Understanding Social Culture and Politics (UCSP)</h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎  Understanding Culture, Society, and Politics uses multidisciplinal insights from anthropology, political science, and sociology to develop student awareness of cultural, social, and political dynamics and sensitivity to cultural diversity.</p>
+        </div>
+	</div>
+	
+	<div class="upperheader-box">
+	</div>
+	
+	<div class="header-box">
+        <h1>2nd Semester</h1>
+	</div>
+	
+	<div class="header-box">
+        <h1>Specialization</h1>
+	</div>
+	
+	<div class="content-box">
+	    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlpAQ0O0mG31HP-Mwlhw6T3dLnriT3q7XOLNBwe8aZn9oCqxbUKWtnv1F2nZ0uHZ0VzwXtxB1PJfmp7kWHzyenstkqDavefpY_OdJ6x8GJsu84QSzOe-WnRcfa_hgQNoropBl0s5QWfxx-/s1600/images.jpg">
+		<div>
+		    <h2>Trends, Networks and Critical Thinking in the 21st Century Culture</h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎  The course provides opportunities for students to discover patterns and extract meanings from emerging trends. It aids in developing their critical and creative thinking skills— essential tools for decision making and understanding “ethics of care”.</p>
+		</div>
+	</div>
+	
+	<div class="content-box">
+	    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw7Xi91pLGsNtNAN2y5-6nYo7u_t-44C8GHA&s">
+		<div>
+		    <h2>Inquiries, Investigation & Immersion</h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎  It defines inquiry as involving investigation through asking questions and probing to find knowledge about a problem. Investigation is described as the organized process of inquiring about a problem through inspection and assessment. Immersion is defined as a state of being deeply engaged or involved.</p>
+		</div>
+	</div>
+	
+	<div class="content-box">
+	    <img src="https://0701.static.prezi.com/preview/v2/p6gtkvs4vj4b5cggjr3uyatqt76jc3sachvcdoaizecfr3dnitcq_3_0.png">
+		<div>
+		    <h2>Culminating Activity</h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎  A culminating activity also known as a culminating assessment, is a complex task teachers have students complete at the end of a learning unit. These tasks involve significant interaction from the students, as they aim to show their new skillsets or knowledge after a long period of learning.</p>
+		</div>
+	</div>
+	
+	<div class="content-box">
+	    <img src="https://cdn.slidesharecdn.com/ss_thumbnails/empowermenttechnologies-200131013124-thumbnail.jpg?width=640&height=640&fit=bounds">
+		<div>
+		    <h2>Empowerment Technologies</h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎  Refers to any tool or system that enables individuals and communities to take control of their lives, make informed decisions, and enhance their well-being in today’s fast-paced, technology-driven world.</p>
+		</div>
+	</div>
+	
+	<div class="content-box">
+	    <img src="https://th.bing.com/th/id/OIP.QS5CxlfLWKwDAwH9OIcWPgAAAA?rs=1&pid=ImgDetMain">
+		<div>
+		    <h2>Community Engagement, Solidarity, and Citizenship</h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎  Community Engagement, Solidarity, and Citizenship is a specialized subject under the Academic career track and the HUMSS learning strand. The subject focuses on community-action initiatives such as community engagement, solidarity, and citizenship.</p>
+		</div>
+	</div>
+	
+	<div class="header-box">
+        <h1>Core Subjects</h1>
+	</div>
+	
+	<div class="content-box">
+	    <img src="https://www.unesco.org/sites/default/files/styles/paragraph_medium_desktop/public/2024-03/MIL%20image.png.jpg?itok=0Hh0VrXB">
+		<div>
+		    <h2> 	Media and Information Literacy</h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎  The subject aims to introduce the students to a basic understanding and preview of media and information as a platform or channel of communication</p>
+		</div>
+	</div>
+		
+	<div class="content-box">
+	    <img src="https://d3j0t7vrtr92dk.cloudfront.net/mtcmedicinestlino/1599947406_0.png">
+		<div>
+		    <h2>Personal Development</h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎  The main topics covered in the Personal Development curriculum include self-development, developing the whole person, developmental stages in adolescence, challenges of adolescence, coping with stress, powers of the mind, mental health and well-being, emotional intelligence, personal and social relationships</p>
+		</div>
+	</div>
+
+    <div class="content-box">
+	    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1H2lBrKEnWi770B7V_ElpBqQK7_AaGqnI1w&s">
+		<div>
+		    <h2> Physical Education and Health </h2>
+		    <p> ‎ ‎ ‎ ‎ ‎ ‎ ‎  Physical Education and Health offers experiential learning for learners to adopt an active life for fitness and lifelong health. </p>
+		</div>
+	</div>
+	
+	<div class="upperheader-box">
+	</div>
+	
+<div class="footer-box">
+    <p>Copyright © 2025 | All Rights Reserved</p>
+</div>
+	
+</body>
+</html>
